@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aviary Altitudes</title>
+    <style>
+    body {
+     margin: 0;
+            padding: 0;
+            overflow: hidden; /* Prevent scrollbars */
+    background: url('sky.png') no-repeat center center fixed;
+    background-size: cover;
+    -webkit-tap-highlight-color: transparent;
+    user-select: none;
+}
+
+
+        #phaser-example {
+            height: 100vh; /* 100% of the viewport height */
+            width: 100%;   /* 100% of the parent's width */
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<script src="https://cdn.jsdelivr.net/npm/phaser@3.70.0/dist/phaser.js"></script>
+
+<div id="phaser-example"></div>
+<script src="game.js"></script>
+</body>
+</html>
