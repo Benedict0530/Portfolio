@@ -26,9 +26,9 @@
         }
 
         #container {
-          max-width: 90%;
-          margin: 50px auto;
-          padding: 20px;
+          max-width: 95%;
+          margin: 20px auto;
+          padding: 15px;
           background-color: #292929;
           box-shadow: 0 0 20px rgba(0, 0, 0, 0.7);
           border-radius: 10px;
@@ -38,8 +38,9 @@
         }
 
         #profile img {
-          width: 150px;
-          height: 150px;
+          width: 100%;
+          max-width: 150px;
+          height: auto;
           border-radius: 50%;
           object-fit: cover;
           border: 5px solid #333;
@@ -52,7 +53,7 @@
         }
 
         #name {
-          font-size: 36px;
+          font-size: 28px;
           margin-top: 20px;
           margin-bottom: 10px;
           color: #3498db;
@@ -168,20 +169,60 @@
           }
 
           .skills li {
-            width: 100%;
+            width: auto;
             text-align: center;
           }
 
           .project {
-            flex-direction: column;
-            align-items: center;
-          }
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: fadeIn 1s ease-in-out;
+}
 
-          .project-icon {
-            margin-right: 0;
-            margin-bottom: 10px;
-          }
+.project-content {
+    text-align: center; /* Center align all content */
+    display: flex;
+    flex-direction: column; /* Stack icon and name vertically */
+    align-items: center; /* Center align items horizontally */
+}
+
+.project-icon {
+    width: 50px;
+    height: 50px;
+    border-radius: 10px;
+    margin-bottom: 10px; /* Adds spacing between icon and name */
+}
+
+.project-name {
+    display: block;
+    color: #3498db;
+    font-weight: bold;
+    font-size: 18px;
+    margin-bottom: 5px; /* Adds spacing between name and description */
+}
+
+
+
+
+.project-description {
+    margin-top: 10px;
+    text-align: justify;
+}
+
         }
+        .cv-link {
+          margin-top: 20%;
+    color: #3498db;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.cv-link:hover {
+    text-decoration: underline;
+}
+
     </style>
 </head>
 <body>
@@ -199,44 +240,121 @@
 
     <!-- Skills -->
     <div class="skills">
-        <p>Skills:</p>
-        <ul>
-            <li>Web Design</li>
-            <li>HTML/CSS</li>
-            <li>JavaScript</li>
-            <li>Android App Development</li>
-            <!-- Add more skills as needed -->
-        </ul>
-    </div>
-
+      <p>Skills:</p>
+      <ul>
+          <li><a href="#web-design">Web Design</a></li>
+          <li><a href="#shrouded-samurai">HTML/CSS</a></li>
+          <li><a href="#shrouded-samurai">JavaScript</a></li>
+          <li><a href="#nebula-tap-nullifier">Android App Development</a></li>
+          <!-- Add more skills as needed -->
+      </ul>
+  </div>
     <!-- Project Title -->
     <div class="project-title">Sample Web/Android Apps</div>
 
     <!-- Projects -->
-    <div class="project">
-        <img class="project-icon" src="shroudedlogo.png" alt="Shrouded Samurai Icon">
-        <a href="ShroudedSamurai/index.html">Shrouded Samurai</a>
+    <div id="shrouded-samurai" class="project">
+      <div class="project-content">
+          <a href="ShroudedSamurai/index.html" target="_blank">
+              <img class="project-icon" src="shroudedlogo.png" alt="Shrouded Samurai Icon">
+              <span class="project-name">Shrouded Samurai</span>
+          </a>
+          <div class="project-description">
+              <p>A fast-paced game where a samurai dashes through a seamless background, skillfully deflecting flying shurikens. Players control the samurai's movements by tapping or clicking anywhere on the screen, engaging in intense action as they master the art of swordplay.</p>
+          </div>
+      </div>
+  </div>
+  
+  <div id="moonlight-masq" class="project">
+    <div class="project-content">
+          <a href="Moonlight/menu.html" target="_blank">
+              <img class="project-icon" src="MoonlightIcon.png" alt="Moonlight Masq Icon">
+              <span class="project-name">Foxenigma's Moonlight Masq</span>
+          </a>
+          <div class="project-description">
+              <p>In this thrilling game, players face off against a relentless horde of wolves, utilizing precise controls to navigate through the chaos. With the ability to move left, right, and unleash powerful attacks, players must demonstrate agility and strategy to survive the moonlit night.</p>
+          </div>
+      </div>
+  </div>
+  
+  <div id="spectral-soldier" class="project">
+    <div class="project-content">
+          <a href="Spectral/index.html" target="_blank">
+              <img class="project-icon" src="soldier.png" alt="Spectral Soldier Icon">
+              <span class="project-name">Spectral Soldier Retreat (For screen size 1900x800 below)</span>
+          </a>
+          <div class="project-description">
+              <p>Embark on an epic adventure tailored for screens up to 1900x800 resolution. Guide a courageous soldier through challenging stages, overcoming obstacles and adversaries with a simple joystick interface. Traverse through multiple levels, culminating in an epic showdown against the final boss.</p>
+          </div>
+      </div>
+  </div>
+  
+  <div id="aviary-altitudes" class="project">
+    <div class="project-content">
+          <a href="AviaryAltitudes/index.html" target="_blank">
+              <img class="project-icon" src="aviary.png" alt="Aviary Altitudes Icon">
+              <span class="project-name">Aviary Altitudes</span>
+          </a>
+          <div class="project-description">
+              <p>Experience the exhilaration of flight in this captivating game reminiscent of Flappy Bird. Players control an eagle soaring through the skies, skillfully maneuvering past dark clouds to reach greater heights. With simple controls and addictive gameplay, prepare for an avian adventure like no other.</p>
+          </div>
+      </div>
+  </div>
+  
+  <div id="aviary-altitudes-android" class="project">
+    <div class="project-content">
+          <a href="https://drive.google.com/file/d/1tGrsrMKeIKceftTyLYQOqN7fYlyCUG51/view?usp=sharing" target="_blank">
+              <img class="project-icon" src="aviary.png" alt="Aviary Altitudes Android Icon">
+              <span class="project-name">Aviary Altitudes (Android App)</span>
+          </a>
+          <div class="project-description">
+              <p>Enjoy the avian adventure on your Android device with this captivating app. Fly high as an eagle, dodging menacing clouds and aiming for the sky. With smooth touch controls optimized for mobile, dive into the addictive gameplay anytime, anywhere.</p>
+          </div>
+      </div>
+  </div>
+  
+  <div id="nebula-tap-nullifier" class="project">
+    <div class="project-content">
+          <a href="https://drive.google.com/file/d/1jBE2duI1ESlN-rMzADa5zDA_yPnMrpGP/view?usp=sharing" target="_blank">
+              <img class="project-icon" src="nebula.png" alt="Nebula Tap Nullifier Icon">
+              <span class="project-name">Nebula Tap Nullifier (Android App)</span>
+          </a>
+          <div class="project-description">
+              <p>Engage in an interactive experience where tapping becomes a rewarding endeavor. Explore the depths of unstable nebulae, tapping your way to earn valuable coins. Upgrade your tapping power and extend your playtime as you delve deeper into the cosmic unknown, mastering the art of nullification on your Android device.</p>
+          </div>
+      </div>
+    
+  </div>
+ <!-- Web Designs -->
+ <div id="web-design" class="websites">
+  <h2>Web Designs</h2>
+  <!-- Add a link to your Google Sites page -->
+  <div class="project-content">
+   
+    <div class="project-description">
+        <p>Explore my web design project hosted on Google Sites. Click the link to view the detailed project and see my design skills in action.</p>
     </div>
-    <div class="project">
-        <img class="project-icon" src="MoonlightIcon.png" alt="Moonlight Masq Icon">
-        <a href="Moonlight/menu.html">Foxenigma's Moonlight Masq</a>
-    </div>
-    <div class="project">
-        <img class="project-icon" src="soldier.png" alt="Spectral Soldier Icon">
-        <a href="Spectral/index.html" target="_blank">Spectral Soldier Retreat (For screen size 1900x800 below)</a>
-    </div>
-    <div class="project">
-        <img class="project-icon" src="aviary.png" alt="Aviary Altitudes Icon">
-        <a href="AviaryAltitudes/index.html">Aviary Altitudes</a>
-    </div>
-    <div class="project">
-        <img class="project-icon" src="aviary.png" alt="Aviary Altitudes Android Icon">
-        <a href="https://drive.google.com/file/d/1tGrsrMKeIKceftTyLYQOqN7fYlyCUG51/view?usp=sharing" target="_blank">Aviary Altitudes (Android App)</a>
-    </div>
-    <div class="project">
-        <img class="project-icon" src="nebula.png" alt="Nebula Tap Nullifier Icon">
-        <a href="https://drive.google.com/file/d/1jBE2duI1ESlN-rMzADa5zDA_yPnMrpGP/view?usp=sharing" target="_blank">Nebula Tap Nullifier (Android App)</a>
-    </div>
+    <a href="https://sites.google.com/view/k44betcomganher30grtisagora/" target="_blank">
+      <img class="project-icon" src="k44icon.png" alt="Website Icon">
+      <span class="project-name" style="color: skyblue;">Google Sites Example #1</span>
+  </a>
+  <a href="https://sites.google.com/view/ganhe-r30-em-dinheiro-real-grt/home?authuser=0" target="_blank">
+    <img class="project-icon" src="Encontre.png" alt="Website Icon">
+    <span class="project-name"style="color: skyblue;">Google Sites Example #2</span>
+</a>
+<a href="https://sites.google.com/view/gin777ganher30grtisagora/sobre-o-gin777" target="_blank">
+  <img class="project-icon" src="gin777.png" alt="Website Icon">
+  <span class="project-name"style="color: skyblue;">Google Sites Example #3</span>
+</a>
+
+</div>
+
+
 </div>
 </body>
+<footer>
+
+  <a style="color: skyblue;" href="https://www.canva.com/design/DAF_tX02RDg/ZY_YtQGBT79AuddwXFOwIQ/view?utm_content=DAF_tX02RDg&utm_campaign=designshare&utm_medium=link&utm_source=editor" target="_blank">Download CV</a>
+
+</footer>
 </html>
