@@ -5,27 +5,36 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Benedict Mendoza - Portfolio</title>
     <style>
+        @keyframes fadeIn {
+          from {
+            opacity: 0;
+            transform: translateY(10px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+
         body {
           font-family: 'Arial', sans-serif;
           margin: 0;
           padding: 0;
-          background-color: #2b2b2b;
-          color: #fff;
+          background-color: #1e1e1e;
+          color: #f0f0f0;
+          line-height: 1.6;
         }
 
         #container {
-          max-width: 80%;
+          max-width: 90%;
           margin: 50px auto;
           padding: 20px;
-          background-color: #333;
-          box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+          background-color: #292929;
+          box-shadow: 0 0 20px rgba(0, 0, 0, 0.7);
           border-radius: 10px;
           overflow: hidden;
-        }
-
-        #profile {
-          float: left;
-          margin-right: 20px;
+          animation: fadeIn 1s ease-in-out;
+          text-align: center;
         }
 
         #profile img {
@@ -35,15 +44,18 @@
           object-fit: cover;
           border: 5px solid #333;
           box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+          transition: transform 0.3s ease;
         }
 
-        #content {
-          overflow: hidden; /* Clear the float */
+        #profile img:hover {
+          transform: scale(1.1);
         }
 
         #name {
           font-size: 36px;
+          margin-top: 20px;
           margin-bottom: 10px;
+          color: #3498db;
         }
 
         .contact-info {
@@ -54,35 +66,55 @@
           margin: 5px 0;
         }
 
+        .contact-info a {
+          color: #3498db;
+          text-decoration: none;
+        }
+
+        .contact-info a:hover {
+          text-decoration: underline;
+        }
+
         .skills {
           margin-top: 20px;
+        }
+
+        .skills p {
+          font-weight: bold;
         }
 
         .skills ul {
           list-style: none;
           padding: 0;
-          margin: 0;
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: center;
         }
 
         .skills li {
-          margin-top: 10px;
-          display: inline-block;
-          margin-right: 10px;
+          margin: 5px;
           background-color: #3498db;
-          padding: 5px 10px;
+          padding: 10px 15px;
           border-radius: 5px;
+          transition: background-color 0.3s ease;
         }
-         .project-title {
+
+        .skills li:hover {
+          background-color: #2980b9;
+        }
+
+        .project-title {
           font-size: 24px;
           font-weight: bold;
-          margin-top: 20px;
+          margin-top: 40px;
         }
 
         .project {
           margin-top: 20px;
-          margin-bottom: 20px;
           display: flex;
           align-items: center;
+          justify-content: center;
+          animation: fadeIn 1s ease-in-out;
         }
 
         .project-icon {
@@ -103,60 +135,107 @@
         .project a:hover {
           color: #2980b9;
         }
+
+        @media (max-width: 768px) {
+          #container {
+            max-width: 95%;
+            margin: 20px auto;
+            padding: 15px;
+          }
+
+          #profile img {
+            width: 100px;
+            height: 100px;
+          }
+
+          #name {
+            font-size: 28px;
+          }
+
+          .skills li {
+            margin: 5px 0;
+          }
+
+          .project a {
+            font-size: 16px;
+          }
+        }
+
+        @media (max-width: 480px) {
+          .skills ul {
+            flex-direction: column;
+            align-items: center;
+          }
+
+          .skills li {
+            width: 100%;
+            text-align: center;
+          }
+
+          .project {
+            flex-direction: column;
+            align-items: center;
+          }
+
+          .project-icon {
+            margin-right: 0;
+            margin-bottom: 10px;
+          }
+        }
     </style>
 </head>
 <body>
 <div id="container">
+    <div id="profile">
+        <img src="myphoto.png" alt="Profile Picture">
+    </div>
+    <div id="name">Benedict L. Mendoza</div>
 
-    <div id="content">
-        <div id="name">Benedict L. Mendoza</div>
+    <!-- Contact Information -->
+    <div class="contact-info">
+        <p>Email: <a href="mailto:mendozabenedict14@gmail.com">mendozabenedict14@gmail.com</a></p>
+        <p>Contact: +639287286968</p>
+    </div>
 
-        <!-- Contact Information -->
-        <div class="contact-info">
-            <p>Email: <a href="mailto:mendozabenedict14@gmail.com">mendozabenedict14@gmail.com</a></p>
-            <p>Contact: +639287286968</p>
-        </div>
+    <!-- Skills -->
+    <div class="skills">
+        <p>Skills:</p>
+        <ul>
+            <li>Web Design</li>
+            <li>HTML/CSS</li>
+            <li>JavaScript</li>
+            <li>Android App Development</li>
+            <!-- Add more skills as needed -->
+        </ul>
+    </div>
 
-        <!-- Skills -->
-        <div class="skills">
-            <p>Skills:</p>
-            <ul>
-                <li>Web Development</li>
-                <li>HTML/CSS</li>
-                <li>JavaScript</li>
-                <li>Android App development</li>
-                <!-- Add more skills as needed -->
-            </ul>
-        </div>
+    <!-- Project Title -->
+    <div class="project-title">Sample Web/Android Apps</div>
 
-        <!-- Project Title -->
-        <div class="project-title">Sample Web/Android Apps</div>
-
-        <!-- Projects -->
-        <div class="project">
-            <img class="project-icon" src="shroudedlogo.png" alt="Web Project Icon">
-            <a href="https://raw.githack.com/Ben00000000/shroudedsamurainotobfus/main/index.html" target="_blank">Shrouded Samurai</a>
-        </div>
-        <div class="project">
-            <img class="project-icon" src="michaelicon.png" alt="Web Project Icon">
-            <a href="https://raw.githack.com/Ben00000000/Michael-Justtice/main/menu.html" target="_blank">Michael the Justice (Landscape)</a>
-        </div>
-        <div class="project">
-            <img class="project-icon" src="soldier.png" alt="Web Project Icon">
-            <a href="https://raw.githack.com/Ben00000000/spectral/main/menu.html" target="_blank">Spectral Soldier Retreat (For screen size 1900x800 below)</a>
-        </div>
-        <div class="project">
-            <img class="project-icon" src="aviary.png" alt="Web Project Icon">
-            <a href="https://raw.githack.com/Ben00000000/Sky88-Aviary-Altitudes-release/main/index.html" target="_blank">Aviary Altitudes</a>
-        </div>
-        <div class="project">
-            <img class="project-icon" src="aviary.png" alt="APK Project Icon">
-            <a href="https://drive.google.com/file/d/1tGrsrMKeIKceftTyLYQOqN7fYlyCUG51/view?usp=sharing" target="_blank">Aviary Altitudes (Android App)</a>
-        </div>
-        <div class="project">
-            <img class="project-icon" src="nebula.png" alt="APK Project Icon">
-            <a href="https://drive.google.com/file/d/1jBE2duI1ESlN-rMzADa5zDA_yPnMrpGP/view?usp=sharing" target="_blank">Nebula Tap Nullifier (Android App)</a>
-        </div>
+    <!-- Projects -->
+    <div class="project">
+        <img class="project-icon" src="shroudedlogo.png" alt="Shrouded Samurai Icon">
+        <a href="ShroudedSamurai/index.html">Shrouded Samurai</a>
+    </div>
+    <div class="project">
+        <img class="project-icon" src="MoonlightIcon.png" alt="Moonlight Masq Icon">
+        <a href="Moonlight/menu.html">Foxenigma's Moonlight Masq</a>
+    </div>
+    <div class="project">
+        <img class="project-icon" src="soldier.png" alt="Spectral Soldier Icon">
+        <a href="Spectral/index.html" target="_blank">Spectral Soldier Retreat (For screen size 1900x800 below)</a>
+    </div>
+    <div class="project">
+        <img class="project-icon" src="aviary.png" alt="Aviary Altitudes Icon">
+        <a href="AviaryAltitudes/index.html">Aviary Altitudes</a>
+    </div>
+    <div class="project">
+        <img class="project-icon" src="aviary.png" alt="Aviary Altitudes Android Icon">
+        <a href="https://drive.google.com/file/d/1tGrsrMKeIKceftTyLYQOqN7fYlyCUG51/view?usp=sharing" target="_blank">Aviary Altitudes (Android App)</a>
+    </div>
+    <div class="project">
+        <img class="project-icon" src="nebula.png" alt="Nebula Tap Nullifier Icon">
+        <a href="https://drive.google.com/file/d/1jBE2duI1ESlN-rMzADa5zDA_yPnMrpGP/view?usp=sharing" target="_blank">Nebula Tap Nullifier (Android App)</a>
     </div>
 </div>
 </body>
