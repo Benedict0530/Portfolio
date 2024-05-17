@@ -1,0 +1,291 @@
+body {
+      margin: 0;
+      overflow: hidden; /* Hide scrollbars */
+        touch-action: none;
+          -webkit-tap-highlight-color: transparent;
+            overflow: hidden;
+              user-select: none;
+    }
+
+  .game-container {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    background: url('foxbg.png') center/cover no-repeat; /* Set background to foxbg.png */
+  }
+
+
+    .player {
+      width: 128px;
+      height: 128px;
+      background: url('idle.png') 0 0 no-repeat;
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      animation: walk-animation 2s steps(8) infinite;
+    }
+
+    .enemy {
+      width: 128px;
+      height: 128px;
+      background: url('enemy.png') 0 0 no-repeat; /* Adjust the image URL */
+      position: absolute;
+      bottom: 0;
+
+      animation: walk-animation-enemy 1s steps(7) infinite;
+    }
+
+
+
+    @keyframes walk-animation {
+      to {
+        background-position: -1024px 0; /* Adjust for the width of your sprite sheet */
+      }
+    }
+
+    @keyframes walk-animation-enemy {
+      to {
+        background-position: -896px 0; /* Adjust for the width of your enemy sprite sheet */
+      }
+    }
+
+    @keyframes attack-animation {
+      to {
+        background-position: -1280px 0; /* Adjust for the width of your sprite sheet */
+      }
+    }
+
+      .health-bar-container {
+          position: absolute;
+          top: 10px;
+          left: 10px;
+          width: 150px;
+          height: 20px;
+          background-color: #ddd;
+          border-radius: 10px;
+          overflow: hidden;
+          opacity: 0.5;
+        }
+
+        .health-bar {
+          height: 100%;
+          background-color: #4caf50;
+          transition: width 0.3s ease;
+        }
+        .rebar-container {
+          position: absolute;
+          top: 40px; /* Adjust the top position based on your layout */
+          left: 10px;
+          width: 150px;
+          height: 10px;
+          background-color: #ddd;
+          border-radius: 5px;
+          overflow: hidden;
+          opacity: 0.5;
+        }
+
+        .rebar {
+          height: 100%;
+          width: 0%;
+          background-color: #2196F3; /* Initial color, adjust as needed */
+          transition: width 0.3s ease;
+        }
+
+    .controls {
+      position: fixed;
+      bottom: 10%;
+      left: 5%;
+      display: flex;
+      opacity: 0.8;
+    }
+
+    button {
+      width: 80px; /* Set a fixed width */
+      height: 80px; /* Set a fixed height */
+      padding: 0; /* Remove padding */
+      cursor: pointer;
+      background-color: #4caf50;
+      color: #fff;
+      border: none;
+      border-radius: 50%; /* Make the buttons perfect circles */
+
+    }
+
+
+    #rightButton {
+ background: url('rightbttn.png') center center no-repeat; /* Replace 'path/to/attackbttn.png' with the actual path to your image */
+     background-size: cover; /* Ensure the background image covers the entire button */
+      margin-right: 10px;
+    }
+
+     #rightButton:active {
+                 background-image: url('rightbttnactive.png');
+                   opacity: 0.5; /* Set opacity to 0.8 */
+             }
+      #leftButton{
+       background: url('leftbttn.png') center center no-repeat; /* Replace 'path/to/attackbttn.png' with the actual path to your image */
+           background-size: cover; /* Ensure the background image covers the entire button */
+            margin-right: 10px;
+      }
+
+        #leftButton:active {
+             background-image: url('leftbttnactive.png');
+               opacity: 0.5; /* Set opacity to 0.8 */
+         }
+
+
+   #attackButton {
+     width: 80px; /* Set a fixed width */
+     height: 80px; /* Set a fixed height */
+     padding: 0; /* Remove padding */
+     background: url('attackbttn.png') center center no-repeat; /* Replace 'path/to/attackbttn.png' with the actual path to your image */
+     background-size: cover; /* Ensure the background image covers the entire button */
+     cursor: pointer;
+     border: none;
+     border-radius: 50%; /* Make the attack button a perfect circle */
+     margin-left: auto;
+     bottom: 10%;
+     position: fixed;
+     right: 10%;
+   }
+   #attackButton:active {
+       background-image: url('attackbttnactive.png');
+         opacity: 0.5; /* Set opacity to 0.8 */
+   }
+
+
+
+  #ultimateButton {
+      display: none;
+      width: 80px;
+      height: 80px;
+      padding: 0;
+      background-color: #f00;
+      color: #fff;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      margin-left: auto;
+      bottom: 60%;
+      position: fixed;
+      right: 10%;
+      overflow: hidden;
+   background: url('ultimate.png') center center no-repeat;
+     background-size: cover;
+      /* Create a fiery border using CSS animation */
+    box-shadow: 0 0 20px 10px rgba(0, 123, 255, 0.5);
+    animation: blueFlameBorder 1s infinite alternate;
+}
+
+@keyframes blueFlameBorder {
+    0% {
+        box-shadow: 0 0 20px 10px rgba(0, 123, 255, 0.5);
+    }
+    100% {
+        box-shadow: 0 0 40px 20px rgba(0, 123, 255, 0.9);
+    }
+}
+
+
+
+   .hit-frames-container {
+     position: absolute;
+     width: 100px; /* Adjust width as needed */
+     height: 100px; /* Adjust height as needed */
+     background-size: cover;
+   }
+  .skill-animation {
+      position: absolute;
+      width: 100px; /* Set the width of your skill animation */
+      height: 100px; /* Set the height of your skill animation */
+      background-size: cover;
+      z-index: 1; /* Ensure the skill animation is above the enemy */
+    }
+/* Additional styles for the game over screen */
+.game-over-screen {
+    width: 100%;
+    height: 50%;
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    padding: 20px;
+    color: white;
+    font-family: 'Arial', sans-serif;
+
+    /* Add text shadow */
+    text-shadow: 2px 2px 4px black;
+}
+
+#restartButton {
+    background: url('restartbttn.png') center center no-repeat;
+    background-size: cover;
+    display: block;
+    margin-top: auto;
+    margin-bottom: 10px;
+    padding: 10px 20px;
+    font-size: 18px;
+    cursor: pointer;
+    margin-left: auto;
+    margin-right: auto;
+    animation: spin 2s infinite linear; /* Adjust duration and timing function as needed */
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+  #scoreDisplay {
+            margin-top: 20px;
+            font-size: 24px;
+            color: gold;
+        }
+
+
+ .win-screen {
+     width: 100%;
+     height: 50%;
+     display: none;
+     position: fixed;
+     top: 50%;
+     left: 50%;
+     transform: translate(-50%, -50%);
+     text-align: center;
+     padding: 20px;
+     color: white;
+     font-family: 'Arial', sans-serif;
+
+     /* Add text shadow */
+     text-shadow: 2px 2px 4px black;
+ }
+
+ #restartButton1 {
+     display: block;
+     margin-top: auto;
+     margin-bottom: 10px;
+     padding: 10px 20px;
+     font-size: 18px;
+     cursor: pointer;
+     margin-left: auto;
+     margin-right: auto;
+ background: url('playagain.png') center center no-repeat;
+    background-size: cover;
+ }
+   #scoreDisplay1 {
+             margin-top: 20px;
+             font-size: 24px;
+             color: gold;
+         }
+
+
+
+
+
+

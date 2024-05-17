@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>M88 Foxenigma's Moonlight Masq</title>
+  <style>
+    html, body {
+        height: 100%;
+        margin: 0;
+        overflow: hidden;
+        touch-action: none;
+        -webkit-tap-highlight-color: transparent;
+        user-select: none;
+    }
+
+    body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+        background: url('foxbg.png') center/cover no-repeat; /* Set background to foxbg.png */
+        background-size: 100% 100%; /* Ensure the background covers the entire viewport */
+        background-position: center; /* Center the background */
+        color: white;
+    }
+
+
+
+
+          #header-container {
+            margin-top: 20px;
+        }
+
+        #logo-image {
+        margin-right: 0;
+            width: 300px; /* Adjust the width of the image as needed */
+        }
+
+
+        #button-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        button {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            padding: 10px;
+            font-size: 16px;
+            cursor: pointer;
+            margin-right: 50%;
+            margin-top:-30%;
+
+            text-align: center;
+
+        }
+
+        #start-button {
+
+
+            border: none;
+             margin-right: 0;
+    background: url('start.png') center/cover no-repeat; /* Set background to info.png */
+
+        }
+
+        #about-button {
+
+
+            border: none;
+             margin-right: 0;
+    background: url('info.png') center/cover no-repeat; /* Set background to info.png */
+        }
+
+        #photos-container {
+            display: flex;
+            justify-content: space-between;
+            margin: 10%; /* 10% margin between the photos */
+        }
+
+        .photo {
+            width: 45%; /* Adjust the width of the photos as needed */
+        }
+    </style>
+</head>
+<body>
+<div id="header-container">
+  <img id="logo-image" src="nav.png" alt="Logo">
+</div>
+
+<div id="button-container">
+  <button id="start-button" onclick="startClicked()"></button>
+  <button id="about-button" onclick="aboutClicked()"></button>
+</div>
+
+<div id="photos-container">
+  <img class="photo" src="photo1.jpg" alt="Photo 1">
+  <img class="photo" src="photo2.jpg" alt="Photo 2">
+</div>
+
+<script>
+        function startClicked() {
+            // Redirect to index.html
+            window.location.href = 'index.html';
+        }
+
+        function aboutClicked() {
+            // Add your about button functionality here
+           window.location.href = 'info.html';
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>CodePen - A Pen by Benedict</title>
+  <link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Walking Game</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="game-container">
+    <div class="player"></div>
+    <div class="enemy-container"></div>
+    <div class="health-bar-container">
+      <div class="health-bar"></div>
+    </div>
+    <div class="rebar-container">
+      <div class="rebar"></div>
+    </div>
+
+    <div class="controls">
+      <button id="leftButton"></button>
+      <button id="rightButton"></button>
+      <button id="attackButton"></button>
+      <button id="ultimateButton" style="display: none;"></button>
+    </div>
+
+
+
+
+    <div class="game-over-screen">
+      <h1>Game Over!</h1>
+      <p>"Your moonlight masquerade ended in defeat, yet amidst the shadows and sequins, you emerged victorious by vanquishing a formidable array of foes."</p>
+      <p id="scoreDisplay">Formidable foes Defeated: <span id="scoreValue">0</span></p>
+      <button id="restartButton"></button>
+    </div>
+
+    <div class="win-screen">
+      <h1>Victory!</h1>
+      <p>"Congratulations! Your moonlight masquerade was a triumph, and you successfully survived the 60 seconds amidst the shadows and sequins."</p>
+      <button id="restartButton1"></button>
+    </div>
+
+    <audio id="hitSound" src="attack.wav"></audio>
+    <audio id="ultiSound" src="ulti.wav"></audio>
+    <audio id="overSound" src="over.wav"></audio>
+    <audio id="pointSound" src="point.ogg"></audio>
+
+
+
+
+    <script src="script.js"></script>
+</body>
+</html>
+<!-- partial -->
+  
+</body>
+</html>
