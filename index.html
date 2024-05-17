@@ -16,6 +16,31 @@
             transform: translateY(0);
           }
         }
+         * {
+            -webkit-tap-highlight-color: transparent; /* For iOS */
+            -webkit-tap-highlight-color: rgba(0, 0, 0, 0); /* For Android */
+        }
+
+        /* CSS for scroll-to-top button */
+        #scroll-to-top {
+            display: none; /* Hide button by default */
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #3498db;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            z-index: 9999; /* Ensure button stays on top */
+            transition: opacity 0.3s ease;
+        }
+
+        #scroll-to-top:hover {
+            background-color: #2980b9;
+        }
 
         body {
           font-family: 'Arial', sans-serif;
@@ -227,6 +252,7 @@
     </style>
 </head>
 <body>
+    <button id="scroll-to-top" onclick="scrollToTop()">Top</button>
 <div id="container">
     <div id="profile">
         <img src="myphoto.png" alt="Profile Picture">
@@ -358,4 +384,21 @@
   <a style="color: skyblue;" href="https://www.canva.com/design/DAF_tX02RDg/ZY_YtQGBT79AuddwXFOwIQ/view?utm_content=DAF_tX02RDg&utm_campaign=designshare&utm_medium=link&utm_source=editor" target="_blank">Download CV</a>
 
 </footer>
+    <script>
+    window.onscroll = function() {scrollFunction()};
+
+    function scrollFunction() {
+        var scrollToTopButton = document.getElementById("scroll-to-top");
+        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+            scrollToTopButton.style.display = "block";
+        } else {
+            scrollToTopButton.style.display = "none";
+        }
+    }
+
+    function scrollToTop() {
+        document.body.scrollTop = 0; // For Safari
+        document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE, and Opera
+    }
+</script>
 </html>
